@@ -21,6 +21,8 @@ public class ShiroConfig {
         DefaultShiroFilterChainDefinition chain = new DefaultShiroFilterChainDefinition();
         chain.addPathDefinition("/api/health", "anon");
         chain.addPathDefinition("/error", "anon");
+        // 养殖台账为场区内网接口，验收环境先行放行；后续版本接入登录鉴权。
+        chain.addPathDefinition("/api/aqua/**", "anon");
         chain.addPathDefinition("/**", "authc");
         return chain;
     }
