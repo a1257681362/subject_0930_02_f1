@@ -29,6 +29,11 @@ mybatis-plus:
   configuration:
     map-underscore-to-camel-case: true
 
+# 未使用 Shiro 注解鉴权（统一走 URL 过滤链）；关闭可避免其自动代理与事务代理叠加成 JDK 双重代理
+shiro:
+  annotations:
+    enabled: false
+
 logging:
   level:
     com.evops: INFO
